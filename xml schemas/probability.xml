@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
-<output type="probability">
 
+<data>
     <trait>
         <name>
             Eye Color
@@ -33,40 +33,41 @@
         </sub>
         
     </trait>
-    
-    <SNP>
-        <rsid>rs12913832</rsid>
-        <allele name = "A">
-            <oddsratio>.1</oddsratio>
-            <cite></cite>
-        </allele>
-        <allele name = "G">
-            <oddsratio>.05</oddsratio>
-            <cite></cite>
-        </allele>
-    </SNP>
-    
-    <SNP>
-        <rsid>rs9999999999</rsid>
-        <allele name = "T">
-            <oddsratio>.05</oddsratio>
-            <cite></cite>
-        </allele>
-    
-    </SNP>
-    
-    <outcome>
-        <value>Brown eyes</value>
-    </outcome>
-    
-    <baseline>
-        <ethnicity>European</ethnicity>
-        <probability>70%</probability>
-    </baseline>
-    
-    <baseline>
-        <ethnicity>African</ethnicity>
-        <probability>90%</probability>
-    </baseline>
-    
-</output>
+    <output type="probability">
+        <SNP>
+            <rsid>rs12913832</rsid>
+            <allele name = "A">
+                <oddsratio>.1</oddsratio>
+                <cite></cite>
+            </allele>
+            <allele name = "G">
+                <oddsratio>.05</oddsratio>
+                <cite></cite>
+            </allele>
+        </SNP>
+        
+        <SNP>
+            <rsid>rs9999999999</rsid>
+            <allele name = "T">
+                <oddsratio>.05</oddsratio>
+                <cite></cite>
+            </allele>
+        
+        </SNP>
+        
+        <outcome>
+            <value>Brown eyes</value>
+        </outcome>
+        
+        <baseline>
+            <ethnicity>European</ethnicity>
+            <probability>70%</probability>
+        </baseline>
+        
+        <baseline>
+            <ethnicity>African</ethnicity>
+            <probability>90%</probability>
+        </baseline>
+            
+    </output>
+</data>

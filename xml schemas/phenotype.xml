@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
-<output type="phenotype">
-
+<data>
     <trait>
         <name>
             Eye Color
@@ -23,40 +22,41 @@
                 <pages>659–63</pages>
                 <DOI>doi:10.1001/archopht.1997.01100150661017</DOI>
                 <PMID>9152135</PMID> 
-            </cite>
+            </cite> 
         </description>
         
-        <super>
-        </super>
+        <supertrait>
+        </supertrait>
         
-        <sub>
-        </sub>
+        <subtrait>
+        </subtrait>
         
     </trait>
-    
-    <SNP>
-        <rsid>rs12913832</rsid>
+    <output type="phenotype">
+        <SNP>
+            <rsid>rs12913832</rsid>
+            
+            <ethnicity value ="European">
         
-        <ethnicity value ="European">
+                <genotype value="AA">
+                    <shortmeaning>Most likely brown</shortmeaning>
+                    <longmeaning>85% chance of brown eyes, 14% chance of green eyes, and 1% chance of blue eyes.</longmeaning>
+                </genotype>
+                
+                <genotype value="AG">
+                    <shortmeaning>Likely brown or green</shortmeaning>
+                    <longmeaning>56% chance of brown eyes, 37% chance of green eyes, and 7% chance of blue eyes.</longmeaning>
+                </genotype>
+                
+                <genotype value="GG">
+                    <shortmeaning>Most likely blue</shortmeaning>
+                    <longmeaning>72% chance of blue eyes, 27% chance of green eyes, and 1% chance of brown eyes.</longmeaning>
+                </genotype>
+                
+            </ethnicity>
+            
+        </SNP>
     
-            <genotype value="AA">
-                <shortmeaning>Most likely brown</shortmeaning>
-                <longmeaning>85% chance of brown eyes, 14% chance of green eyes, and 1% chance of blue eyes.</longmeaning>
-            </genotype>
-            
-            <genotype value="AG">
-                <shortmeaning>Likely brown or green</shortmeaning>
-                <longmeaning>56% chance of brown eyes, 37% chance of green eyes, and 7% chance of blue eyes.</longmeaning>
-            </genotype>
-            
-            <genotype value="GG">
-                <shortmeaning>Most likely blue</shortmeaning>
-                <longmeaning>72% chance of blue eyes, 27% chance of green eyes, and 1% chance of brown eyes.</longmeaning>
-            </genotype>
-            
-        </ethnicity>
-        
-    </SNP>
-    
-</output>
+    </output>
+</data>
     
