@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<data>
+    <trait>
+        <name>
+            Spherical errors (nearsightedness and farsightedness)
+        </name>
+        
+        <wikipedialink>
+            https://en.wikipedia.org/wiki/Refractive_error#Classification
+        </wikipedialink>
+        
+        <description>
+           Spherical errors are refractive errors where the image is focused either in front or behind the retina, making the image blurry. Spherical errors include myopia (nearsightedness) and hyperopia (farsightedness).
+        </description>
+        
+        <supertrait slug="refractive_errors">
+            Refractive errors
+        </supertrait>
+        
+    </trait>
+    <output type="phenotype">
+        <trait>
+            <name>High-grade myopia</name>
+            <description>High-grade myopia, or severe nearsightedness, is defined as having myopia measuring at -6 diopters or worse. </description>
+        </trait>
+        
+        <cite type="article">
+            <author>Li Z, Qu J, Xu X, Zhou X, Zou H, Wang N, Li T, Hu X, Zhao Q, Chen P, Li W, Huang K, Yang J, He Z, Ji J, Wang T, Li J, Li Y, Liu J, Zeng Z, Feng G, He L, Shi Y</author>
+            <title>A genome-wide association study reveals association between common variants in an intergenic region of 4q25 and high-grade myopia in the Chinese Han population.</title>
+            <journal>Hum Mol Genet.</journal>
+            <year>2011</year>
+            <volume>20</volume>
+            <number>15</number>
+            <pages>2861-8</pages>
+            <DOI>10.1093/hmg/ddr169</DOI>
+            <PMID>21505071</PMID> 
+        </cite> 
+        
+        <SNP>
+            <rsid>rs10034228</rsid>
+            
+            <ethnicity value ="Asian">
+        
+                <genotype value="CC">
+                    <shortmeaning>Slightly higher odds</shortmeaning>
+                    <longmeaning>Slightly higher odds of developing high-grade myopia.</longmeaning>
+                </genotype>
+                
+                <genotype value="CT">
+                    <shortmeaning>Typical odds</shortmeaning>
+                    <longmeaning>Typical odds of devloping high-grade myopia.</longmeaning>
+                </genotype>
+                
+                <genotype value="TT">
+                    <shortmeaning>Slightly lower odds</shortmeaning>
+                    <longmeaning>Slightly lower odds of developing high-grade myopia</longmeaning>
+                </genotype>
+                
+            </ethnicity>
+            
+        </SNP>
+    </output>
+    
+    <output type="model" unit = "diopters">
+        <ethnicity>European</ethnicity>
+        <cite>
+        </cite>
+        <SNP>
+            <rsid>rs560766</rsid>
+            <allele name = "G">
+                <oddsratio></oddsratio>>
+            </allele>
+            <allele name = "A">
+                <oddsratio></oddsratio>
+            </allele>
+        </SNP>
+        
+        <SNP>
+            <rsid>rs939661</rsid>
+            <allele name = "G">
+                <oddsratio></oddsratio>>
+            </allele>
+            <allele name = "A">
+                <oddsratio></oddsratio>
+            </allele>
+        </SNP>
+        <cite type="article">
+            <author>Pirro G Hysi,	 Terri L Young,	 David A Mackey,	 Toby Andrew,	 Alberto Fernández-Medarde, Abbas M Solouki,	 Alex W Hewitt,	 Stuart Macgregor,	 Johannes R Vingerling,	 Yi-Ju Li,	 M Kamran Ikram,	 Lee Yiu Fai,	 Pak C Sham,	 Lara Manyes,	 Angel Porteros,	 Margarida C Lopes, Francis Carbonaro,	 Samantha J Fahy,	 Nicholas G Martin,	 Cornelia M van Duijn,	 Timothy D Spector,	 Jugnoo S Rahi,	 Eugenio Santos,	 Caroline C W Klaver	 & Christopher J Hammond</author>
+            <title>A genome-wide association study reveals association between common variants in an intergenic region of 4q25 and high-grade myopia in the Chinese Han population.</title>
+            <journal>Nature Genetics</journal>
+            <year>2010</year>
+            <volume>42</volume>
+            <pages> 902–905</pages>
+            <DOI>1038/ng.664</DOI> 
+        </cite> 
+        
+    </output>
+
+</data>
+    
