@@ -40,59 +40,80 @@
         <SNP>
             <rsid>rs10034228</rsid>
             
-            <ethnicity value ="Asian">
+                <ethnicity value ="Asian">
         
-                <genotype value="CC">
-                    <shortmeaning>Slightly higher odds</shortmeaning>
-                    <longmeaning>Slightly higher odds of developing high-grade myopia.</longmeaning>
-                </genotype>
-                
-                <genotype value="CT">
-                    <shortmeaning>Typical odds</shortmeaning>
-                    <longmeaning>Typical odds of devloping high-grade myopia.</longmeaning>
-                </genotype>
-                
-                <genotype value="TT">
-                    <shortmeaning>Slightly lower odds</shortmeaning>
-                    <longmeaning>Slightly lower odds of developing high-grade myopia</longmeaning>
-                </genotype>
-                
-            </ethnicity>
+                    <genotype value="CC">
+                        <shortmeaning>Slightly higher odds</shortmeaning>
+                        <longmeaning>Slightly higher odds of developing high-grade myopia.</longmeaning>
+                    </genotype>
+                    
+                    <genotype value="CT">
+                        <shortmeaning>Typical odds</shortmeaning>
+                        <longmeaning>Typical odds of developing high-grade myopia.</longmeaning>
+                    </genotype>
+                    
+                    <genotype value="TT">
+                        <shortmeaning>Slightly lower odds</shortmeaning>
+                        <longmeaning>Slightly lower odds of developing high-grade myopia</longmeaning>
+                    </genotype>
+
+                </ethnicity>
             
         </SNP>
     </output>
     
-    <output type="model" unit = "diopters">
-        <ethnicity>European</ethnicity>
-        <cite>
-        </cite>
+    <output type="phenotype">
+        <trait>
+            <name>Spherical errors</name>
+            <description>Spherical errors contribute to the degree (severity) of myopia (nearsightedness) and hyperopia (farsightedness). Diopters are units that describe the degree of myopia and hyperopia. A negative diopter value means nearsighted and a positive diopter value means farsighted. </description>
+        </trait>
         <SNP>
             <rsid>rs560766</rsid>
-            <allele name = "G">
-                <oddsratio></oddsratio>>
-            </allele>
-            <allele name = "A">
-                <oddsratio></oddsratio>
-            </allele>
+            <ethnicity value ="European">
+                <genotype value="GG">
+                    <shortmeaning>Slightly lower degree of myopia</shortmeaning>
+                    <longmeaning>Refractive error was 0.2 diopters higher on average, meaning people with this genotype had a lower degree of myopia (nearsightedness) than the average person in this study.</longmeaning>
+                </genotype>
+                
+                <genotype value="AG">
+                    <shortmeaning>Average refractive error</shortmeaning>
+                    <longmeaning>Refractive error was average, meaning that people with this genotype had no more than the average amount of nearsightedness (the average person in this study was nearsighted).</longmeaning>
+                </genotype>
+                
+                <genotype value="AA">
+                    <shortmeaning>Slightly higher degree of myopia</shortmeaning>
+                    <longmeaning>Refractive error was 0.2 diopters lower on average, meaning people with this genotype were slightly more myopic (nearsighted) than average.
+            </ethnicity>
         </SNP>
         
         <SNP>
             <rsid>rs939661</rsid>
-            <allele name = "G">
-                <oddsratio></oddsratio>>
-            </allele>
-            <allele name = "A">
-                <oddsratio></oddsratio>
-            </allele>
+            <ethnicity value ="European">
+                <genotype value="GG">
+                    <shortmeaning>Slightly lower degree of myopia</shortmeaning>
+                    <longmeaning>Refractive error was 0.15 diopters higher on average, meaning people with this genotype had a lower degree of myopia (nearsightedness) than the average person in this study.</longmeaning>
+                </genotype>
+                
+                <genotype value="AG">
+                    <shortmeaning>Average refractive error</shortmeaning>
+                    <longmeaning>Refractive error was average, meaning that people with this genotype had no more than the average amount of nearsightedness (the average person in this study was nearsighted).</longmeaning>
+                </genotype>
+                
+                <genotype value="AA">
+                    <shortmeaning>Slightly higher degree of myopia</shortmeaning>
+                    <longmeaning>Refractive error was 0.15 diopters lower on average, meaning people with this genotype were slightly more myopic (nearsighted) than average.
+            </ethnicity>
+            </ethnicity>
         </SNP>
         <cite type="article">
-            <author>Pirro G Hysi,	 Terri L Young,	 David A Mackey,	 Toby Andrew,	 Alberto Fernández-Medarde, Abbas M Solouki,	 Alex W Hewitt,	 Stuart Macgregor,	 Johannes R Vingerling,	 Yi-Ju Li,	 M Kamran Ikram,	 Lee Yiu Fai,	 Pak C Sham,	 Lara Manyes,	 Angel Porteros,	 Margarida C Lopes, Francis Carbonaro,	 Samantha J Fahy,	 Nicholas G Martin,	 Cornelia M van Duijn,	 Timothy D Spector,	 Jugnoo S Rahi,	 Eugenio Santos,	 Caroline C W Klaver	 & Christopher J Hammond</author>
-            <title>A genome-wide association study reveals association between common variants in an intergenic region of 4q25 and high-grade myopia in the Chinese Han population.</title>
+            <author>Solouki AM, Verhoeven VJ, van Duijn CM, Verkerk AJ, Ikram MK, Hysi PG, Despriet DD, van Koolwijk LM, Ho L, Ramdas WD, Czudowska M, Kuijpers RW, Amin N, Struchalin M, Aulchenko YS, van Rij G, Riemslag FC, Young TL, Mackey DA, Spector TD, Gorgels TG, Willemse-Assink JJ, Isaacs A, Kramer R, Swagemakers SM, Bergen AA, van Oosterhout AA, Oostra BA, Rivadeneira F, Uitterlinden AG, Hofman A, de Jong PT, Hammond CJ, Vingerling JR, Klaver CC.</author>
+            <title>A genome-wide association study identifies a susceptibility locus for refractive errors and myopia at 15q14.</title>
             <journal>Nature Genetics</journal>
             <year>2010</year>
             <volume>42</volume>
-            <pages> 902–905</pages>
-            <DOI>1038/ng.664</DOI> 
+            <number>10</number>
+            <pages>897-901</pages>
+            <DOI>10.1038/ng.663</DOI> 
         </cite> 
         
     </output>

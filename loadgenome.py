@@ -1,10 +1,13 @@
-import csv, re
+import csv, re, sys
+sys.path.append('snpy')
+import sn
 
-def loadgen():
+
+def load23andme(filename):
     '''
     Creates a dictionary rsid_dict where the key is the rsid and the value is the genotype at that location. 
     '''
-    with open("sample genomes/23andme_sample.txt", 'rb') as f:
+    with open(filename, 'rb') as f:
         genome= csv.reader(f, delimiter='	')
         rsid_pattern = re.compile(r'^rs[0-9]+$')
         genotype_pattern = re.compile(r'^[AGTC]{2}$')
@@ -19,14 +22,27 @@ def loadgen():
                     Hopefully this will be robust against manually corrupted files- for instance, user inserted spaces should cause
                     the entire line to be rejected. And if the user inserted space is a tab, the rsid and genotypes won't be in the correct position,
                     and again, the line will be rejected.
-                    
-                    Please fix this if you can make it more robust. It's better to reject an entire line than to potentially report false genotypes!
                     '''
                     #print rsid_match.group() #should be your rsid
                     #print genotype_match.group() #should be your corresponding genotype
                     
                     rsid_dict[rsid_match.group()] = genotype_match.group()
-        #print rsid_dict
-                    
+        return rsid_dict
+    
+def loadgensnpy(filename, source = None):
+    '''
+    Snpy wrapper, optional source as named param.
+    
+    source = one of ``"23andme"``, ``"vcf"``,
+        ``"decodeme"`` or ``"ftdna"``;  
+    '''
+    snpy_generator = sn.parse(filename, source)
+    return snpy_generator
+    
+        
+    
+
 if  __name__ =='__main__':
-    loadgen()
+    filename = "sample genomes/sample.23andme.txt"
+    rsid_dict = load23andme(filename)
+    print rsid_dict

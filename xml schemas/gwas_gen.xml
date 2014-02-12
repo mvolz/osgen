@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <data>
-    <rawdata>
+    <gwas>
         <dateadded>12/07/2013/dateadded>
         <PUBMEDID>23785401</PUBMEDID>
         <fauthor>Leone MA</fauthor>
@@ -36,7 +36,7 @@
         <95CI>[NR]</95CI>
         <PlatformSNPspassingQC>Illumina [504,967]</PlatformSNPspassingQC>
         <CNV>N</CNV>
-    </rawdata>
+    </gwas>
 
     <trait>
         <name>
