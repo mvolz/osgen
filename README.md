@@ -11,4 +11,6 @@ Information about each disease and associated SNPs is stored in an XML file. Thi
 
 Python code is included to parse the XML files locally. 
 
+Includes snpy library from: https://github.com/superbobry/snpy
+
 ====

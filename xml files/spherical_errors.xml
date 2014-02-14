@@ -82,7 +82,8 @@
                 
                 <genotype value="AA">
                     <shortmeaning>Slightly higher degree of myopia</shortmeaning>
-                    <longmeaning>Refractive error was 0.2 diopters lower on average, meaning people with this genotype were slightly more myopic (nearsighted) than average.
+                    <longmeaning>Refractive error was 0.2 diopters lower on average, meaning people with this genotype were slightly more myopic (nearsighted) than average.</longmeaning>
+                </genotype>
             </ethnicity>
         </SNP>
         
@@ -101,8 +102,8 @@
                 
                 <genotype value="AA">
                     <shortmeaning>Slightly higher degree of myopia</shortmeaning>
-                    <longmeaning>Refractive error was 0.15 diopters lower on average, meaning people with this genotype were slightly more myopic (nearsighted) than average.
-            </ethnicity>
+                    <longmeaning>Refractive error was 0.15 diopters lower on average, meaning people with this genotype were slightly more myopic (nearsighted) than average.</longmeaning>
+                </genotype>
             </ethnicity>
         </SNP>
         <cite type="article">

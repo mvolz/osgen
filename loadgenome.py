@@ -39,8 +39,6 @@ def loadgensnpy(filename, source = None):
     snpy_generator = sn.parse(filename, source)
     return snpy_generator
     
-        
-    
 
 if  __name__ =='__main__':
     filename = "sample genomes/sample.23andme.txt"
