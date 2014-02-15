@@ -7,9 +7,10 @@ from reportlab.rl_config import defaultPageSize
 from reportlab.lib.units import inch
 
 from loadgenome import load23andme, loadgensnpy
-from parsexml import loadxml, returnSNPs
-from join import get_subset, get_filelist
+from parsexml import loadxml, returnSNPs, get_xml_filelist
+from join import get_subset
 
+#This file makes pdf reports of the data
 
 PAGE_HEIGHT=defaultPageSize[1]
 PAGE_WIDTH=defaultPageSize[0]

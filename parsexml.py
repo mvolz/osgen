@@ -1,4 +1,7 @@
 import xml.etree.ElementTree as ET
+import os, glob
+
+#This file primarily deals with functions that interpret the data in the xml files containing trait information
 
 #Classes
 class Report():
@@ -33,6 +36,13 @@ class Genotype():
 
 
 #Functions
+def get_xml_filelist():
+    filelist = []
+    os.chdir("xml files")
+    for f in glob.glob("*.xml"):
+        filelist.append(f)
+    return filelist
+    
 def run(xmlfile):
     #root = loadxml(xmlfile)
     #gettrait(root)
@@ -93,7 +103,12 @@ def get_trait_obj(root):
         description = None
     
     trait = Trait(name = name, wlink = wlink, supertrait = supertrait, subtrait = subrait, description = description)
-
+    
+def get_ref_trait_obj(root):
+    '''
+    Tries to located the referenced trait found in a subtrait or supertrait tag
+    '''
+    
     return trait
      
 def gettext(root, text):
