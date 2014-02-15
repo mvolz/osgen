@@ -34,12 +34,11 @@ class Genotype():
     #longmeaning = 
     pass
 
-
 #Functions
 def get_xml_filelist():
     filelist = []
-    os.chdir("xml files")
-    for f in glob.glob("*.xml"):
+    #os.chdir("xml files")
+    for f in glob.glob("xml files/*.xml"):
         filelist.append(f)
     return filelist
     
@@ -88,7 +87,8 @@ def get_trait_dict(root):
         
     return traitdict
 
-def get_trait_obj(root):
+def get_trait_obj(xmlfile):
+    root = loadxml(xmlfile)
     '''
     Gets information about the trait and returns Trait object
     '''
@@ -102,7 +102,8 @@ def get_trait_obj(root):
     except:
         description = None
     
-    trait = Trait(name = name, wlink = wlink, supertrait = supertrait, subtrait = subrait, description = description)
+    trait = Trait(name = name, wlink = wlink, supertrait = supertrait, subtrait = subtrait, description = description)
+    return trait
     
 def get_ref_trait_obj(root):
     '''
