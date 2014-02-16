@@ -27,7 +27,7 @@ class Trait():
         self.supertrait = supertrait
         self.subtrait = subtrait
         self.description = description
-
+        
 class Genotype():
     #genotype = 
     #shortmeaning=
@@ -71,12 +71,12 @@ def returnSNPs(xmlfile):
         
 def get_trait_dict(root):
     '''
-    Returns a dict of info about the trait. 
-    Will include any tag found wwithin the trait tag, unlike get_trait_obj
-    Probably will be made redundant by get_trait_obj
+    Returns a dict of info about a trait tag. 
+    Will include any tag found within the trait tag, unlike get_trait_obj
+    Used mostly in trait tags other than the root child trait tag
     '''
     
-    trait = root.getiterator("trait")[0]
+    trait = root.getiterator("trait")[0] #fix this to only get direct children?
 
     traitdict = {}
     for child in trait:
@@ -90,7 +90,7 @@ def get_trait_dict(root):
 def get_trait_obj(xmlfile):
     root = loadxml(xmlfile)
     '''
-    Gets information about the trait and returns Trait object
+    Gets information about the trait file and returns Trait object
     '''
     name = gettext(root, "name")
     wlink = gettext(root,"wikipedialink")
@@ -105,11 +105,12 @@ def get_trait_obj(xmlfile):
     trait = Trait(name = name, wlink = wlink, supertrait = supertrait, subtrait = subtrait, description = description)
     return trait
     
-def get_ref_trait_obj(root):
+def get_ref_trait_obj(slug):
     '''
-    Tries to located the referenced trait found in a subtrait or supertrait tag
+    Tries to locate the referenced trait found in a subtrait or supertrait tag. 
+    Not written yet.
     '''
-    
+    trait = None
     return trait
      
 def gettext(root, text):
@@ -149,6 +150,8 @@ def getgenotypes(ethnicity):
         genotype_dict[genotype] = meanings
     return genotype_dict
 
+#create reports - fix to return report objects
+
 def reportify_phenotype(o_tag):
     '''
     Returns a list of tuples in the format (ethnicity_string, genotype_dict)
@@ -187,6 +190,6 @@ def reportify_probability(o_tag):
 
 if  __name__ =='__main__':
 
-    returnSNPs("xml files/eye_color.xml")
+    print get_trait_obj("xml files/refractive_errors.xml")
 
     

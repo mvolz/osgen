@@ -22,7 +22,7 @@
             Spherical Errors
         </subtrait>
         
-        <subtrait slug="spherical_errors">
+        <subtrait slug="cylindrical_errors">
             Cylindrical Errors
         </subtrait>
         

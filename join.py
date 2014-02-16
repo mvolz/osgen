@@ -35,15 +35,20 @@ def get_subset(genome):
     #print genome_dict
     return genome_dict
 
-def get_summary(genome_dict):
+def get_summary(genome):
     '''
     Gets a summary of all the traits and the short meaning of the phenotype
     '''
-    genome_dict = get_subset(genome)
     filelist = get_xml_filelist()
+    #print filelist
+    
+    genome_dict = get_subset(genome)
+    #print genome_dict
     
     for f in filelist:
-        pass
+        trait = get_trait_obj(f)
+        print trait.name
+        
     
 def punnet(genome1,genome2):
     '''cross two genomes (make a baby)'''
@@ -52,5 +57,5 @@ def punnet(genome1,genome2):
 
 if  __name__ =='__main__':
 
-    subset = get_subset("../sample genomes/1117.23andme.txt")
+    subset = get_summary("sample genomes/sample.23andme.txt")
     
