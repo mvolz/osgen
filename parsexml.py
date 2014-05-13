@@ -4,19 +4,25 @@ import os, glob
 #This file primarily deals with functions that interpret the data in the xml files containing trait information
 
 #Classes
-class Report():
+##Genome Specific Reports
+class TraitReport():
     '''
-    Report on a study with user results
+    Report on which genotypes for a list of RSIDs associated with a trait a
+    genome has
     '''
-    #trait = 
-    pass
-    
-class Phenotypes():
+    def __init__(self, trait, rsid_report_list)
+        self.trait = trait #trait obj
+        self.rsid_report_list #list of rsidreport objectss
+
+class RSIDReport():
     '''
-    Information about phenotypes
+    Report on which genotype for a given rsid a genome has
     '''
-    pass
-    
+    def __init__(self, genotype, rsid)
+        self.rsid = rsid
+        self.genotype = genotype
+        
+##Classes for General Information
 class Trait():
     '''
     Information about traits
@@ -27,12 +33,25 @@ class Trait():
         self.supertrait = supertrait
         self.subtrait = subtrait
         self.description = description
+
+class RSID():
+    '''
+    RSID information
+    '''
+    def __init__(self, rsid, genotype_list):
+        self.rsid = rsid #i.e. rsid5670
+        self.genotype_list = genotype_list #list of Genotype objects
         
 class Genotype():
-    #genotype = 
-    #shortmeaning=
-    #longmeaning = 
-    pass
+    '''
+    Information about a genotype corresponding to a SNP(i.e. AA or GC) for a 
+    given RSID
+    '''
+    def __init__(self, genotype, shortmeaning, longmeaning, rsid):
+        self.genotype = genotype #i.e. AA or GC
+        self.shortmeaning = shortmeaning
+        self.longmeaning = longmeaning
+        self.rsid = rsid #associated RSID object
 
 #Functions
 def get_xml_filelist():
