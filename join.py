@@ -48,9 +48,9 @@ def get_summary(genome):
     for f in filelist:
         trait = get_trait_obj(f)
         print trait.name
-        
+
     
-def punnet(genome1,genome2):
+def punnett(genome1,genome2):
     '''cross two genomes (make a baby)'''
     pass
 
