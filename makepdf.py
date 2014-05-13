@@ -54,7 +54,7 @@ def go(genome_file_name, output_file):
         report_list.append(bogustext)
 
     for r in report_list:
-        p = Paragraph(bogustext, style)
+        p = Paragraph(r, style)
         Story.append(p)
         Story.append(Spacer(1,0.2*inch))
 
