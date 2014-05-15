@@ -11,9 +11,13 @@ Verion 0.0.1
 This version is a proof-of-concept that delivers very limited results for 5 SNPs
 
 How to use:
+
 1. Clone git repo (into terminal, type 'git clone https://github.com/mvolz/osgen.git')
+
 2. CD into folder 'osgen'
-3. Into the terminal type 'python main.py -i <input_file> -o <output_file>' where <input_file> is the path to your downloaded genome file.
+
+3. Into the terminal type 'python main.py -i input_file -o output_file' where input_file is the path to your downloaded raw genome file.
+
 4. Open the resulting .pdf to read your results
 
 =====
