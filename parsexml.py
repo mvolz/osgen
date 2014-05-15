@@ -2,31 +2,17 @@ import xml.etree.ElementTree as ET
 import os, glob
 
 #This file primarily deals with functions that interpret the data in the xml files containing trait information
-
-#Classes
-##Genome Specific Reports
-class TraitReport():
-    '''
-    Report on which genotypes for a list of RSIDs associated with a trait a
-    genome has
-    '''
-    def __init__(self, trait, rsid_report_list)
-        self.trait = trait #trait obj
-        self.rsid_report_list #list of rsidreport objectss
-
-class RSIDReport():
-    '''
-    Report on which genotype for a given rsid a genome has
-    '''
-    def __init__(self, genotype, rsid)
-        self.rsid = rsid
-        self.genotype = genotype
         
-##Classes for General Information
+##Classes 
 class Trait():
     '''
-    Information about traits
+    Object representing trait information from an xml file
+    Not used
     '''
+    def __repr__(self):
+        traitstring = "Trait Object: %s" % self.name
+        return traitstring
+
     def __init__(self, name, wlink, supertrait, subtrait, description):
         self.name = name
         self.wlink = wlink
@@ -34,38 +20,34 @@ class Trait():
         self.subtrait = subtrait
         self.description = description
 
-class RSID():
+# Newer OO Functions
+def get_trait_obj(xmlfile):
+    root = loadxml(xmlfile)
     '''
-    RSID information
+    Gets information about the trait file and returns Trait object
+    Not used
     '''
-    def __init__(self, rsid, genotype_list):
-        self.rsid = rsid #i.e. rsid5670
-        self.genotype_list = genotype_list #list of Genotype objects
-        
-class Genotype():
-    '''
-    Information about a genotype corresponding to a SNP(i.e. AA or GC) for a 
-    given RSID
-    '''
-    def __init__(self, genotype, shortmeaning, longmeaning, rsid):
-        self.genotype = genotype #i.e. AA or GC
-        self.shortmeaning = shortmeaning
-        self.longmeaning = longmeaning
-        self.rsid = rsid #associated RSID object
+    name = gettext(root, "name")
+    wlink = gettext(root,"wikipedialink")
+    supertrait = gettext(root,"supertrait")
+    subtrait = gettext(root,"subtrait")
+    
+    try:
+        description = root.getiterator("description")[0]
+    except:
+        description = None
+    
+    trait = Trait(name = name, wlink = wlink, supertrait = supertrait, subtrait = subtrait, description = description)
+    return trait
 
-#Functions
+
+# Older Non OO Functions
 def get_xml_filelist():
     filelist = []
     #os.chdir("xml files")
     for f in glob.glob("xml files/*.xml"):
         filelist.append(f)
     return filelist
-    
-def run(xmlfile):
-    #root = loadxml(xmlfile)
-    #gettrait(root)
-    #getreports(root)
-    returnSNPs(xmlfile)
 
 def loadxml(xmlfile):
     tree = ET.parse(xmlfile)
@@ -91,8 +73,8 @@ def returnSNPs(xmlfile):
 def get_trait_dict(root):
     '''
     Returns a dict of info about a trait tag. 
-    Will include any tag found within the trait tag, unlike get_trait_obj
-    Used mostly in trait tags other than the root child trait tag
+    Not used
+    Supplanted by Trait class and get_trait_obj
     '''
     
     trait = root.getiterator("trait")[0] #fix this to only get direct children?
@@ -105,32 +87,6 @@ def get_trait_dict(root):
         print "%s: %s\n" % (key,value)
         
     return traitdict
-
-def get_trait_obj(xmlfile):
-    root = loadxml(xmlfile)
-    '''
-    Gets information about the trait file and returns Trait object
-    '''
-    name = gettext(root, "name")
-    wlink = gettext(root,"wikipedialink")
-    supertrait = gettext(root,"supertrait")
-    subtrait = gettext(root,"subtrait")
-    
-    try:
-        description = root.getiterator("description")[0]
-    except:
-        description = None
-    
-    trait = Trait(name = name, wlink = wlink, supertrait = supertrait, subtrait = subtrait, description = description)
-    return trait
-    
-def get_ref_trait_obj(slug):
-    '''
-    Tries to locate the referenced trait found in a subtrait or supertrait tag. 
-    Not written yet.
-    '''
-    trait = None
-    return trait
      
 def gettext(root, text):
     '''
@@ -144,6 +100,7 @@ def gettext(root, text):
 def getreports(root):
     '''
     gets report from each output tag
+    Not used
     '''
     report_list = []
     for o in root.findall("output"):
@@ -158,6 +115,7 @@ def getreports(root):
 def getgenotypes(ethnicity):
     '''
     return dict of genotypes and meanings
+    Not used
     '''
     genotype_dict = {}
     genotypes = ethnicity.findall("genotype")
@@ -174,6 +132,7 @@ def getgenotypes(ethnicity):
 def reportify_phenotype(o_tag):
     '''
     Returns a list of tuples in the format (ethnicity_string, genotype_dict)
+    Not currently in use
     '''
     
     try:
@@ -197,12 +156,15 @@ def reportify_phenotype(o_tag):
     
     #print report
     return report
-        
+
+
+#empty methods- todo
 def reportify_probability(o_tag):
     '''
     Parses an output tag where a probability
     of the phenotype or disease described in the <outcome> tag.
     Sample XML file is in /xmlschemas/
+    Not written
     '''
     pass
 
